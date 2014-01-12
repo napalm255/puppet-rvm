@@ -1,7 +1,7 @@
 class rvm::dependencies::centos {
 
   case $::operatingsystemrelease {
-    /^6\..*/: {
+    /^(6\.)|(.*amzn).*/: {
       if ! defined(Package['libcurl-devel']) { package { 'libcurl-devel':      ensure => present } }
     }
     /^5\..*/: {
